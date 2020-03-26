@@ -1,0 +1,24 @@
+ul.nav-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F0F0F0;
+}
+
+li.nav-items {
+    float: left;
+}
+
+li.nav-items a {
+    display: block;
+    padding: 0px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+body {
+    margin: 0;
+    background-color: #FCFCFC;
+}

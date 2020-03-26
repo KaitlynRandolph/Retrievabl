@@ -1,0 +1,61 @@
+ul.nav-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fcfcfc;
+}
+
+li.nav-items {
+    float: left;
+}
+
+li.nav-items a {
+    display: block;
+    padding: 0px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    padding: 0px;
+    background-color: #efefef !important;
+}
+
+a.footer-item {
+    color: #fcfcfc;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    padding: 0px;
+    background-color: #2B2D42;
+}
+
+body {
+    margin: 0;
+    background-color: #FCFCFC;
+}
+
+main {
+    text-align: center;
+}
+
+p {
+    margin-bottom: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+[type='donate'] {
+    float
+}
