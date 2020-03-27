@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="457" height="155" viewBox="0 0 457 155">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #253ddf;
+        font-size: 100px;
+      }
+
+      .cls-1, .cls-3 {
+        font-family: TimeBurner-Bold, TimeBurner;
+        font-weight: 700;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #3a3a3a;
+      }
+
+      .cls-2 {
+        font-family: TimeBurner;
+        font-weight: 400;
+      }
+
+      .cls-3 {
+        font-size: 45px;
+      }
+    </style>
+  </defs>
+  <g id="Component_15_1" data-name="Component 15 – 1" transform="translate(1)">
+    <text id="Retrievabl" class="cls-1" transform="translate(456 120)"><tspan x="-452.6" y="0">Retriev</tspan><tspan class="cls-2" y="0">abl</tspan></text>
+    <text id="Welcome_to" data-name="Welcome to" class="cls-3" transform="translate(238 41)"><tspan x="-238.005" y="0">Welcome to</tspan></text>
+  </g>
+</svg>
