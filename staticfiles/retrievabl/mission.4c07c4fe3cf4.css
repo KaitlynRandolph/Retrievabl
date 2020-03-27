@@ -1,0 +1,18 @@
+.mission-box {
+    position: relative;
+    margin-top: 60px;
+    background-color: #46237a;
+    height: 90px;
+}
+
+.mission-title {
+    color: white;
+    font-size: 35px;
+}
+
+p.mission {
+    padding: 5px !important;
+    margin: 10px !important;
+    font-size: 25px;
+    text-align: justify;
+}
