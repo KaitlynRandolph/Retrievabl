@@ -63,5 +63,5 @@ button.btn-primary {
 
 @font-face {
      font-family: TimeBurner;
-     src: url('{% static 'retrievabl/TimeBurner.ttf' %}');
+     src: url('{% static retrievabl/TimeBurner.ttf %}');
       }
