@@ -55,8 +55,11 @@ p {
     margin-left: 10px;
 }
 
+button.nav-btn {
+    max-width: 75px;
+}
+
 button.btn-primary {
     background-color: #253DDF !important;
     border-color: #253DDF !important;
-    max-width: 75px;
 }

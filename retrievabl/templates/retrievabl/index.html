@@ -1,13 +1,21 @@
 {% extends 'retrievabl/base_page.html' %}
 {% load static %}
 
+{% block navbar %}
+
+{% endblock %}
+
 {% block content %}
-<link rel="stylesheet" href="{% static 'retrievabl/base.css' %}">
+<link rel="stylesheet" href="{% static 'retrievabl/index.css' %}">
 <main role="main" class="container">
   <div class="welcome">
-       <img style="margin-left:6px; margin-top:25%;" src="{% static 'retrievabl/images/Welcome.png' %}" alt="Welcome to Retrievabl">
-    <h1>Bootstrap starter template</h1>
-    <p class="lead">Welcome to retrievabl!</p>
+       <img style="margin-left:6px; margin-top:15%; width: 50%; height: auto" src="{% static 'retrievabl/images/Welcome.png' %}" alt="Welcome to Retrievabl">
+      <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search for news" aria-label="Search">
+                    <button class="nav-btn btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    <p class="donate-msg">Retrievabl is funded in part by donations from users. Please consider donating.</p>
+      <button type="donate" class="btn btn-primary btn-lg" style="margin-top: 10px;">Donate</button>
   </div>
 
 </main>
