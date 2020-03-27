@@ -1,0 +1,10 @@
+.mission-box {
+    position: relative !important;
+    height: 50%;
+    color: purple;
+}
+
+.mission-title {
+    color: black;
+    text-size: 20px;
+}

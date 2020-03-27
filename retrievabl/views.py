@@ -7,3 +7,7 @@ def index(request):
 
 def search(request):
     return render(request, 'retrievabl/base_page.html')
+
+
+def mission(request):
+    return render(request, 'retrievabl/our_mission.html')
