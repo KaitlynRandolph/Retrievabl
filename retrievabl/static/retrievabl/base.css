@@ -60,8 +60,3 @@ button.btn-primary {
     border-color: #253DDF !important;
     max-width: 75px;
 }
-
-@font-face {
-     font-family: TimeBurner;
-     src: '{% static retrievabl/Timeburner.ttf %}';
-      }
