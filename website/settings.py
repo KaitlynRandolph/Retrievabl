@@ -127,3 +127,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 django_heroku.settings(locals())
+
+NEG_WORDS = 'static/retrievabl/neg_words.txt'
