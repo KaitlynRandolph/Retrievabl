@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Starter Template · Bootstrap</title>
+    <title>Retrievabl</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/starter-template/">
 
@@ -57,10 +57,6 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <form class=" form-inline ml-2 mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search for news" aria-label="Search" style="width:430px !important;">
-                    <button class="nav-btn btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </ul>
             <ul class="navbar-nav px-3">
                 <button type="donate" class="nav-btn btn btn-success my-2 my-sm-0">Donate</button>
@@ -79,7 +75,7 @@
 {% block footer %}
   <footer class="footer">
       <p class="float-right"><a class="footer-item">©Kaitlyn Randolph</a></p>
-      <p><a class="footer-item" href="{% url 'retrievabl:our_mission' %}">Our Mission</a> <a class="footer-item" href="#">Contact Us</a></p>
+      <p><a class="footer-item" href="{% url 'retrievabl:our_mission' %}">Our Mission</a> <a class="footer-item" href="{% url 'retrievabl:contact_us' %}">Contact Us</a></p>
 
     </footer>
   {% endblock %}

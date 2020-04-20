@@ -12,9 +12,18 @@ form-inline {
     margin: 0 auto;
 }
 
-.form-control {
+input#id_query {
     width:430px !important;
     display: block;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+ul#id_neg {
+    list-style: none !important;
+    margin-left: 180px;
+}
+
+h6.label {
+    margin-left: 150px !important;
 }

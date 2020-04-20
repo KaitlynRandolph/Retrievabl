@@ -2,21 +2,21 @@ from django.db import models
 
 
 class Article(models.Model):
-    article_title = models.CharField(max_length=100)
-    article_body = models.TextField()
+    title = models.CharField(max_length=100)
+    body = models.TextField()
     body_preview = models.CharField(max_length=300)
+    url = models.TextField()
+    source = models.CharField(max_length=75)
+    score = models.DecimalField(max_digits=15, decimal_places=3)
+    percentage = models.DecimalField(max_digits=15, decimal_places=2)
 
     def get_preview(self):
-        return self.article_body[:300]
+        return self.body[:300]
 
     def __str__(self):
-        return self.article_title + ": " + self.article_body
+        return self.title + ": " + self.body_preview
 
 
-class NegWordsLM(models.Model):
-    xyz = models.TextField()
-
-
-class SearchResults(models.Model):
-    article = models.ForeignKey(Article, on_delete=models.CASCADE)
-    rank = models.DecimalField(max_digits=15, decimal_places=2)
+class Search(models.Model):
+    query = models.CharField(max_length=100)
+    neg = models.IntegerField(choices=((1, "Neg. Filtering"), (0, "Reg. BM25")), default=1)

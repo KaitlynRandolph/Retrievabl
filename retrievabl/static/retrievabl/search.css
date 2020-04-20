@@ -1,0 +1,19 @@
+ul.articles {
+   margin-top: 63px;
+   overflow-y: auto;
+   max-height: calc(100% - 133px);
+}
+
+body {
+    font-size: 14px;
+}
+
+.footer {
+    position: sticky !important;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    padding: 0px;
+    background-color: #2B2D42;
+}

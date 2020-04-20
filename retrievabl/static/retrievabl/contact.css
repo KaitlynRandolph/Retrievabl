@@ -1,0 +1,29 @@
+.header-box {
+    position: relative;
+    margin-top: 60px;
+    background-color: #46237a;
+    height: 90px;
+}
+
+.header-title {
+    color: white;
+    font-size: 35px;
+}
+
+.contact-line {
+    margin: 0 auto;
+}
+
+text-area.contact-box {
+    width:50% !important;
+    display: block;
+    margin: 0 !important;
+}
+
+.contact-btn {
+    margin-top: 3px !important;
+}
+
+.container {
+    margin-top: 5%;
+}

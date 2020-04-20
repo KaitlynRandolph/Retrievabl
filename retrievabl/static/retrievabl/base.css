@@ -63,3 +63,8 @@ button.btn-primary {
     background-color: #253DDF !important;
     border-color: #253DDF !important;
 }
+
+input#id_query {
+    display: block;
+    margin-right: 5px !important;
+}

@@ -10,9 +10,10 @@
 <main role="main" class="container">
   <div class="welcome" style="width: 50% margin: 0;">
        <img style="margin-left:6px; margin-top:15%; height: auto" src="{% static 'retrievabl/images/Welcome.png' %}" alt="Welcome to Retrievabl">
-      <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search for news" aria-label="Search">
-                    <button class="nav-btn btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      <form class="form-inline" method="get">
+            {{ form.neg }}
+            {{ form.query }}
+            <button class="nav-btn btn btn-primary my-2 my-sm-0" type="submit">Search</button>
       </form>
     <p class="donate-msg">Retrievabl is funded in part by donations from users. Please consider donating.</p>
       <button type="donate" class="btn btn-success btn-lg" style="margin-top: 10px;">Donate</button>

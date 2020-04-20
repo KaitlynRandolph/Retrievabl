@@ -1,0 +1,16 @@
+{% extends 'retrievabl/base_page.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'retrievabl/contact.css' %}">
+    <div class="d-flex container-fluid header-box align-items-center">
+        <h2 class="header-title">Contact Us</h2>
+    </div>
+    <main role="main" class="container">
+        <div class="form-group contact-line" style="clear:both;">
+            <label for="contact-box"><h3>We'd love to hear from you!</h3></label>
+            <textarea class="form-control contact-box" id="contact-box" rows="3"></textarea>
+            <button class="nav-btn btn btn-primary my-2 my-sm-0 contact-btn float-right" type="submit">Submit</button>
+        </div>
+    </main>
+{% endblock %}

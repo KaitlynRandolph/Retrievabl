@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,5 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 django_heroku.settings(locals())
 
 NEG_WORDS = 'static/retrievabl/neg_words.txt'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
