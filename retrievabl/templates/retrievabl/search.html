@@ -22,6 +22,7 @@
 
 {% block content %}
     <link rel="stylesheet" href="{% static 'retrievabl/search.css' %}">
+    <p>{{ Search.ndcg }}</p>
     <ul class="articles">
     {% for article in articles %}
         <li style="list-style-type: none;"><div class="card" style="width: 50%; margin-bottom: 5px; margin-right: 0;">
@@ -31,40 +32,13 @@
                 <p class="card-text">{{ article.body_preview }}...</p>
                 <h6 style="float:right;">| Score: {{ article.score }} </h6>
                 <h6 style="float:right;">Negative words: {{ article.percentage }}% |</h6>
-                <!--<svg style="float: right;" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27">
-          <defs>
-            <style>
-              .cls-1 {
-                opacity: 0.75;
-              }
-
-              .cls-2 {
-                fill: #a2a2a2;
-              }
-
-              .cls-3 {
-                fill: #fff;
-                font-size: 20px;
-                font-family: Georgia-Bold, Georgia;
-                font-weight: 700;
-                letter-spacing: 0.01em;
-              }
-            </style>
-          </defs>
-          <g id="Group_18" data-name="Group 18" class="cls-1" transform="translate(-1030 -253)">
-            <g id="Add" class="cls-1" transform="translate(1030 253)">
-              <path id="Path_209" data-name="Path 209" class="cls-2" d="M13.435,0A13.435,13.435,0,1,1,0,13.435,13.435,13.435,0,0,1,13.435,0Z"/>
-              <text id="i" class="cls-3" transform="translate(14 21)"><tspan x="-3.535" y="0">i</tspan></text>
-            </g>
-          </g>
-        </svg>-->
             </div>
         </div>
 
         </li>
 
     {% empty %}
-        <p>No results.</p>
+        <p>No results found for given query.</p>
     {% endfor %}
     </ul>
 {% endblock %}

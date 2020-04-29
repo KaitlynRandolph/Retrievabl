@@ -20,3 +20,4 @@ class Article(models.Model):
 class Search(models.Model):
     query = models.CharField(max_length=100)
     neg = models.IntegerField(choices=((1, "Neg. Filtering"), (0, "Reg. BM25")), default=1)
+    ndcg = models.DecimalField(max_digits=15, decimal_places=3)

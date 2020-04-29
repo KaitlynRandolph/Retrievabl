@@ -5,7 +5,7 @@ from django.conf import settings
 from .forms import ArticleSearchForm
 from django.views.generic.list import ListView
 from django.views.generic.detail import SingleObjectMixin
-from .models import Article
+from .models import Article, Search
 from math import log2
 from django.http import HttpResponseRedirect
 import string
@@ -81,7 +81,7 @@ def neg_score(query, corpus):
     query = query.lower()
     negbm25score = 0
     k = 1.25
-    nk = 10000 # weight for negative filtering
+    nk = 10 # weight for negative filtering
     avgdl = avg_doc_len(corpus)
     M = len(corpus)
     b = 0.75
@@ -96,6 +96,7 @@ def neg_score(query, corpus):
         freq = 0
 
     result = 0
+    regbm25score = 0.0
     for doc in corpus:
         dbody = str(doc.body.lower().split()).translate(translator)
         length = len(re.findall(r'\w+', dbody))
@@ -104,15 +105,16 @@ def neg_score(query, corpus):
                 one = query.count(word.lower())
                 two = (k + 1) * dbody.count(str(word).lower())
                 three = dbody.count(str(word).lower()) + (k * (1 - b + (b * (length / avgdl))))
-                four = log2((M + 1) / (docfreq[str(word).lower()] + 1))
-                result += one * (two / three) * four
-        for neg_word in nw:
-            five = ((nk * dbody.count(str(neg_word))) + 1)
-            result = result / five
-            negbm25score += result
+                four = log2((M + 1) / (doc.body.count(str(word)) + 1))
+                result = one * (two / three) * four
+                regbm25score += result
+
+        result = (1 - ((doc.percentage / 100) * nk)) * regbm25score
+        negbm25score = result
         doc.score = float(negbm25score)
         doc.save()
         negbm25score = 0.0
+        regbm25score = 0.0
 
 
 def reg_score(query, corpus):
@@ -158,7 +160,7 @@ def find_neg(doc):
         if find > 0:
             neg_count += find
     length = len(re.findall(r'\w+', dbody))
-    doc.percentage = float(100 * neg_count / length)
+    doc.percentage = float(100 * (neg_count / length))
     doc.save()
 
 
@@ -166,12 +168,35 @@ class ArticleListView(ListView):
     template_name = 'retrievabl/search.html'
     context_object_name = 'articles'
 
+    def get_ndcg(self, query):
+        neg_score(query, Article.objects.all())
+        articles = Article.objects.order_by('score').reverse().filter(score__gt=0)
+        i = 1
+        dcg = 0
+        idcg = 0
+        for article in articles:
+            dcg += float(2 ** article.score - 1) / log2(i + 1)
+            i += 1
+
+        reg_score(query, Article.objects.all())
+        articles = Article.objects.order_by('score').reverse().filter(score__gt=0)
+        i = 1
+        for article in articles:
+            idcg += float(2 ** article.score - 1) / log2(i + 1)
+
+        if idcg == 0:
+            idcg = 1
+
+        return float(dcg / idcg)
+
     def get_queryset(self):
         query = self.kwargs.pop('query', None)
-        negRank = self.kwargs.pop('neg', None)
-        if negRank == 1:
+        neg_rank = self.kwargs.pop('neg', None)
+
+        if neg_rank == 1:
             neg_score(query, Article.objects.all())
         else:
             reg_score(query, Article.objects.all())
 
-        return Article.objects.order_by('score').reverse()[:5]
+        result = Article.objects.order_by('score').reverse().filter(score__gt=0)
+        return result
